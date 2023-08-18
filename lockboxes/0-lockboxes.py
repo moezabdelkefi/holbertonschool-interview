@@ -1,4 +1,4 @@
-#!/usr/bin/
+#!/usr/bin/python3
 """
 determines if all the boxes can be opened.
 """
