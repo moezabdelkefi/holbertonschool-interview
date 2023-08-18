@@ -1,4 +1,7 @@
-#!/usr/bin/python3
+#!/usr/bin/
+"""
+determines if all the boxes can be opened.
+"""
 def canUnlockAll(boxes):
     newlist = []
     k = len(boxes)
