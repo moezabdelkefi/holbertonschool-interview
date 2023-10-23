@@ -8,13 +8,13 @@
  */
 int is_palindrome(listint_t **head)
 {
+    int len = 0;
+    int i, j;
     if (*head == NULL)
         return (1);
 
     listint_t *current;
     listint_t *array[4096];
-    int len = 0;
-    int i, j;
 
     current = *head;
 
