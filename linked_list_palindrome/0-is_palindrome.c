@@ -11,17 +11,16 @@ int is_palindrome(listint_t **head)
     if (*head == NULL)
         return (1);
 
-    int len = 0;
     listint_t *current = *head;
     listint_t *array[4096];
+    int len = 0;
+    int i, j;
 
     while (current != NULL)
     {
         array[len++] = current;
         current = current->next;
     }
-
-    int i, j;
 
     for (i = 0, j = len - 1; i < j; i++, j--)
     {
