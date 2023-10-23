@@ -1,8 +1,10 @@
 #!/usr/bin/python3
+"""Log parsing"""
 import sys
 
 
 def print_stats(total_size, status_codes):
+    """ Print statistics about the size of the log file"""
     print("File size: {}".format(total_size))
     sorted_status_codes = sorted(status_codes.items())
     for code, count in sorted_status_codes:
@@ -10,6 +12,7 @@ def print_stats(total_size, status_codes):
 
 
 def main():
+    """Run the command line interface with the given arguments"""
     total_size = 0
     status_codes = {200: 0, 301: 0, 400: 0,
                     401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
