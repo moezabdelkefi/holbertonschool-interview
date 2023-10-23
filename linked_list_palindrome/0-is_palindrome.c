@@ -13,7 +13,6 @@ int is_palindrome(listint_t **head)
 
     listint_t *current = *head;
     listint_t *array[4096];
-    int len = 0;
     int i, j;
 
     for (i = 0, j = 0; current != NULL; i++, j++, current = current->next)
