@@ -16,13 +16,10 @@ int is_palindrome(listint_t **head)
     int len = 0;
     int i, j;
 
-    while (current != NULL)
-    {
-        array[len++] = current;
-        current = current->next;
-    }
+    for (i = 0, j = 0; current != NULL; i++, j++, current = current->next)
+        array[i] = current;
 
-    for (i = 0, j = len - 1; i < j; i++, j--)
+    for (i = 0, j--; i < j; i++, j--)
     {
         if (array[i]->n != array[j]->n)
             return (0);
