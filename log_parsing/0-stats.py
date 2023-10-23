@@ -6,13 +6,14 @@ import sys
 def print_stats(total_size, status_codes):
     """ Print statistics about the size of the log file"""
     print("File size: {}".format(total_size))
-    sorted_status_codes = sorted(status_codes.items())
-    for code, count in sorted_status_codes:
-        print("{}: {}".format(code, count))
+    for code in sorted(status_codes):
+        count = status_codes[code]
+        if count > 0:
+            print("{}: {}".format(code, count))
 
 
 def main():
-    """Run the command line interface with the given arguments"""
+    """ Main program """
     total_size = 0
     status_codes = {200: 0, 301: 0, 400: 0,
                     401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
@@ -22,7 +23,11 @@ def main():
         for line in sys.stdin:
             parts = line.split()
             if len(parts) >= 7:
-                status_code = int(parts[-2])
+                status_code = parts[-2]
+                if status_code.isdigit():
+                    status_code = int(status_code)
+                else:
+                    continue
                 file_size = int(parts[-1])
                 if status_code in status_codes:
                     status_codes[status_code] += 1
