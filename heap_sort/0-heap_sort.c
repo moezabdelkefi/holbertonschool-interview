@@ -40,7 +40,7 @@ void heap_sort(int *array, size_t size)
     if (size < 2 || !array)
         return;
 
-    int i;
+    int i; // Move the variable declaration to the beginning
 
     for (i = (size / 2) - 1; i >= 0; i--)
         heapify(array, size, i, size);
