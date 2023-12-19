@@ -26,12 +26,3 @@ def rain(walls):
         water += min(left_max[i], right_max[i]) - walls[i]
 
     return water
-
-
-# Test cases
-if __name__ == "__main__":
-    walls1 = [0, 1, 0, 2, 0, 3, 0, 4]
-    print(rain(walls1))  # Output: 6
-
-    walls2 = [2, 0, 0, 4, 0, 0, 1, 0]
-    print(rain(walls2))  # Output: 6
