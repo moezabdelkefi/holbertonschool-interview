@@ -1,3 +1,9 @@
+#!/usr/bin/python3
+"""
+calculates the amount of water that can be trapped between the walls
+"""
+
+
 def rain(walls):
     if not walls or len(walls) < 3:
         return 0
