@@ -11,7 +11,8 @@
 int getMax(int *array, size_t size)
 {
     int max = array[0];
-    for (size_t i = 1; i < size; i++)
+    size_t i;
+    for (i = 1; i < size; i++)
     {
         if (array[i] > max)
         {
@@ -31,24 +32,26 @@ void countSort(int *array, size_t size, int exp)
 {
     int *output = malloc(size * sizeof(int));
     int count[10] = {0};
+    size_t i;
+    int j;
 
-    for (size_t i = 0; i < size; i++)
+    for (i = 0; i < size; i++)
     {
         count[(array[i] / exp) % 10]++;
     }
 
-    for (int i = 1; i < 10; i++)
+    for (j = 1; j < 10; j++)
     {
-        count[i] += count[i - 1];
+        count[j] += count[j - 1];
     }
 
-    for (int i = size - 1; i >= 0; i--)
+    for (j = size - 1; j >= 0; j--)
     {
-        output[count[(array[i] / exp) % 10] - 1] = array[i];
-        count[(array[i] / exp) % 10]--;
+        output[count[(array[j] / exp) % 10] - 1] = array[j];
+        count[(array[j] / exp) % 10]--;
     }
 
-    for (size_t i = 0; i < size; i++)
+    for (i = 0; i < size; i++)
     {
         array[i] = output[i];
     }
