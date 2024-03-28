@@ -4,6 +4,10 @@
 
 
 def island_perimeter(grid):
+    """
+    Input: List of Lists
+    Returns: Perimeter of the island
+    """
     if not grid:
         return 0
 
