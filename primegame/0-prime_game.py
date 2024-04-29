@@ -26,9 +26,9 @@ def isWinner(x, nums):
     def play_game(n):
         primes = get_primes(n)
         if len(primes) % 2 == 0:
-            return "Maria"
-        else:
             return "Ben"
+        else:
+            return "Maria"
 
     winners = []
     for num in nums:
