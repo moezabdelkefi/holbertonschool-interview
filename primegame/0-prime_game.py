@@ -26,9 +26,9 @@ def isWinner(x, nums):
     def play_game(n):
         primes = get_primes(n)
         if len(primes) % 2 == 0:
-            return "Ben"
-        else:
             return "Maria"
+        else:
+            return "Ben"
 
     winners = []
     for num in nums:
@@ -36,7 +36,8 @@ def isWinner(x, nums):
 
     winner_counts = {player: winners.count(player) for player in set(winners)}
     max_wins = max(winner_counts.values())
-    winning_players = [player for player, wins in winner_counts.items() if wins == max_wins]
+    winning_players = [player for player, wins in winner_counts.items()
+                       if wins == max_wins]
 
     if len(winning_players) == 1:
         return winning_players[0]
